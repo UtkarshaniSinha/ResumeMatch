@@ -59,7 +59,7 @@ At first I only used the TF-IDF score, but it was coming very low (around 10-15%
 | Forms + CSRF | Flask-WTF |
 | PDF text | pdfplumber |
 | Matching | scikit-learn |
-| Server | gunicorn |
+| Hosting | PythonAnywhere (free plan) |
 | Testing | pytest |
 
 ## Folder structure
@@ -88,7 +88,7 @@ resumematch/
 You need Python 3.12 installed.
 
 ```
-git clone https://github.com/UtkarshaniSinha/resumematch.git
+git clone https://github.com/UtkarshaniSinha/ResumeMatch.git resumematch
 cd resumematch
 py -3.12 -m venv venv
 venv\Scripts\activate
@@ -149,29 +149,54 @@ There are 40 tests. They cover PDF validation, skill matching, the scores, resum
 
 ## Deployment
 
-The app is made to run on AWS with a PostgreSQL database.
+The app runs on the free plan of [PythonAnywhere](https://www.pythonanywhere.com). I chose it because it's free without a credit card, the app doesn't go to sleep, and there is no server to manage. It uses SQLite, which is enough for a small site.
 
 ```
- Browser --https--> AWS (Flask + gunicorn) ---> PostgreSQL
+ Browser --https--> PythonAnywhere (Flask) ---> SQLite file
 ```
 
-What is needed on the server:
+Steps I followed (in a PythonAnywhere **Bash console**):
 
-1. Install the packages from `requirements.txt`
-2. Set these environment variables:
-   - `SECRET_KEY` - a long random string
-   - `DATABASE_URL` - the PostgreSQL connection string
-   - `APP_ENV=production`
+1. Get the code and install the packages:
+   ```
+   git clone https://github.com/UtkarshaniSinha/ResumeMatch.git resumematch
+   cd resumematch
+   python3.12 -m venv venv
+   source venv/bin/activate
+   pip install --no-cache-dir -r requirements.txt
+   ```
+   `--no-cache-dir` matters because the free plan only has 512 MB of disk.
+2. Create the `.env` file with the production settings:
+   ```
+   python -c "import secrets; print('SECRET_KEY=' + secrets.token_hex(32))" > .env
+   echo "APP_ENV=production" >> .env
+   ```
+   `DATABASE_URL` is left out, so the app uses SQLite in the `instance` folder.
 3. Create the tables once:
    ```
    flask --app run create-tables
    ```
-4. Start the app with gunicorn (this is also in the `Procfile`):
-   ```
-   gunicorn run:app
+4. On the **Web** tab: add a new web app, choose **Manual configuration** and Python 3.12, then set
+   the paths below (`echo $HOME` in the console shows the start of the full path):
+   - Virtualenv: `$HOME/resumematch/venv`
+   - Static files: URL `/static/` pointing to `$HOME/resumematch/app/static`
+   - **Force HTTPS: on** (the session cookie is https-only in production, so login won't work over http)
+5. Open the WSGI configuration file from the Web tab, replace everything in it with this and click **Reload**:
+   ```python
+   import os
+   import sys
+
+   project_folder = os.path.expanduser("~/resumematch")
+   sys.path.insert(0, project_folder)
+
+   from run import app as application
    ```
 
-HTTPS is handled by AWS in front of the app. `ProxyFix` in `app/__init__.py` makes Flask understand that the original request was https, so the secure cookie works properly.
+To update the live site later: `git pull` in the console, then **Reload** on the Web tab. The free plan needs one click on **"Run until 1 month from today"** on the Web tab every month, otherwise the site is paused.
+
+HTTPS is handled by PythonAnywhere in front of the app. `ProxyFix` in `app/__init__.py` makes Flask understand that the original request was https, so the secure cookie works properly.
+
+The `Procfile` and `psycopg2-binary` are not used on PythonAnywhere. I kept them so the same code can run with gunicorn and PostgreSQL on hosts like Render or AWS by setting `DATABASE_URL`.
 
 ## Limitations
 
