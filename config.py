@@ -2,8 +2,11 @@ import os
 
 from dotenv import load_dotenv
 
-# loads values from .env (only on my laptop, the server has real env variables)
-load_dotenv()
+# loads values from the .env file next to this file.
+# the full path is given because on the server the app is started from a
+# different folder, and load_dotenv() without a path didn't find the file there
+ENV_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+load_dotenv(ENV_FILE)
 
 DEV_SECRET_KEY = "dev-only-not-secret"
 
