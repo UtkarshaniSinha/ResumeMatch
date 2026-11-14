@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "_macros.html" import field_errors %}
+{% block title %}Account - ResumeMatch{% endblock %}
+{% block content %}
+<h1>My account</h1>
+<section class="card">
+  <table>
+    <tr><td>Username</td><td>{{ user.username }}</td></tr>
+    <tr><td>Member since</td><td>{{ user.created_at.strftime('%d %b %Y') }}</td></tr>
+    <tr><td>Saved analyses</td><td>{{ saved_count }}</td></tr>
+  </table>
+</section>
+
+<section class="card danger-zone">
+  <h2>Delete account</h2>
+  <p>This deletes your account and all {{ saved_count }} saved analyses. It can't be undone.</p>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <label for="password">{{ form.password.label.text }}</label>
+    {{ form.password(autocomplete="current-password") }}
+    {{ field_errors(form.password) }}
+    <button type="submit" class="button danger">Delete my account</button>
+  </form>
+</section>
+{% endblock %}

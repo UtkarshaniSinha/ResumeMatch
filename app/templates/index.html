@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_macros.html" import field_errors %}
+{% block content %}
+<section class="card">
+  <h1>How well does your resume match the job?</h1>
+  <p class="muted">Upload your resume and paste a job description. Your resume is not stored anywhere.</p>
+
+  <form method="post" action="{{ url_for('main.analyze') }}" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <label for="resume">{{ form.resume.label.text }}</label>
+    {{ form.resume(accept=".pdf,application/pdf") }}
+    {{ field_errors(form.resume) }}
+
+    <label for="job_description">{{ form.job_description.label.text }}</label>
+    {{ form.job_description(rows=10, placeholder="Paste the full job description here...") }}
+    {{ field_errors(form.job_description) }}
+
+    <button type="submit" class="button">Analyse my resume</button>
+  </form>
+</section>
+
+<section class="card sample">
+  <p>Don't have a resume ready? Try it with a
+    <a href="{{ url_for('static', filename='sample/sample_resume.pdf') }}">sample resume</a>
+    and a sample job description.</p>
+  <form method="post" action="{{ url_for('main.sample') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button type="submit" class="button secondary">Try with sample data</button>
+  </form>
+</section>
+{% endblock %}

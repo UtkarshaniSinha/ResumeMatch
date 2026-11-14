@@ -1,0 +1,399 @@
+{
+  "Python": [
+    "python"
+  ],
+  "Java": [
+    "java"
+  ],
+  "C++": [
+    "c++",
+    "cpp"
+  ],
+  "C#": [
+    "c#",
+    "csharp"
+  ],
+  "JavaScript": [
+    "javascript",
+    "js",
+    "es6"
+  ],
+  "TypeScript": [
+    "typescript"
+  ],
+  "Go": [
+    "golang",
+    "go lang",
+    "go language"
+  ],
+  "Rust": [
+    "rust"
+  ],
+  "Kotlin": [
+    "kotlin"
+  ],
+  "Swift": [
+    "swift"
+  ],
+  "PHP": [
+    "php"
+  ],
+  "Ruby": [
+    "ruby"
+  ],
+  "R": [
+    "r programming",
+    "rstudio"
+  ],
+  "MATLAB": [
+    "matlab"
+  ],
+  "Scala": [
+    "scala"
+  ],
+  "Bash": [
+    "bash",
+    "shell scripting"
+  ],
+  "HTML": [
+    "html",
+    "html5"
+  ],
+  "CSS": [
+    "css",
+    "css3"
+  ],
+  "SQL": [
+    "sql"
+  ],
+  "MySQL": [
+    "mysql"
+  ],
+  "PostgreSQL": [
+    "postgresql",
+    "postgres",
+    "postgre"
+  ],
+  "SQLite": [
+    "sqlite"
+  ],
+  "MongoDB": [
+    "mongodb"
+  ],
+  "Redis": [
+    "redis"
+  ],
+  "Oracle": [
+    "oracle"
+  ],
+  "Firebase": [
+    "firebase"
+  ],
+  "Flask": [
+    "flask"
+  ],
+  "Django": [
+    "django"
+  ],
+  "FastAPI": [
+    "fastapi"
+  ],
+  "Spring Boot": [
+    "spring boot"
+  ],
+  "Node.js": [
+    "node.js",
+    "nodejs",
+    "node"
+  ],
+  "Express": [
+    "express.js",
+    "expressjs"
+  ],
+  "React": [
+    "react",
+    "react.js",
+    "reactjs",
+    "react js"
+  ],
+  "Angular": [
+    "angular"
+  ],
+  "Vue": [
+    "vue",
+    "vue.js"
+  ],
+  "Next.js": [
+    "next.js",
+    "nextjs"
+  ],
+  "Bootstrap": [
+    "bootstrap"
+  ],
+  "Tailwind CSS": [
+    "tailwind"
+  ],
+  "jQuery": [
+    "jquery"
+  ],
+  ".NET": [
+    ".net",
+    "dotnet",
+    "asp.net"
+  ],
+  "REST API": [
+    "rest api",
+    "restful",
+    "rest apis",
+    "rest api's",
+    "restful api"
+  ],
+  "GraphQL": [
+    "graphql"
+  ],
+  "JSON": [
+    "json"
+  ],
+  "Git": [
+    "git"
+  ],
+  "GitHub": [
+    "github"
+  ],
+  "GitLab": [
+    "gitlab"
+  ],
+  "Linux": [
+    "linux"
+  ],
+  "Unix": [
+    "unix"
+  ],
+  "Docker": [
+    "docker"
+  ],
+  "Kubernetes": [
+    "kubernetes",
+    "k8s"
+  ],
+  "Jenkins": [
+    "jenkins"
+  ],
+  "CI/CD": [
+    "ci/cd",
+    "cicd"
+  ],
+  "AWS": [
+    "aws",
+    "amazon web services",
+    "ec2",
+    "aws lambda"
+  ],
+  "Azure": [
+    "azure"
+  ],
+  "Google Cloud": [
+    "gcp",
+    "google cloud"
+  ],
+  "Heroku": [
+    "heroku"
+  ],
+  "Render": [
+    "render.com"
+  ],
+  "Nginx": [
+    "nginx"
+  ],
+  "Terraform": [
+    "terraform"
+  ],
+  "Machine Learning": [
+    "machine learning",
+    "ml"
+  ],
+  "Deep Learning": [
+    "deep learning"
+  ],
+  "Artificial Intelligence": [
+    "artificial intelligence",
+    "ai"
+  ],
+  "NLP": [
+    "nlp",
+    "natural language processing"
+  ],
+  "Computer Vision": [
+    "computer vision"
+  ],
+  "Data Analysis": [
+    "data analysis",
+    "data analytics"
+  ],
+  "Data Structures": [
+    "data structures",
+    "dsa",
+    "data structure"
+  ],
+  "Algorithms": [
+    "algorithms",
+    "algorithm"
+  ],
+  "OOP": [
+    "oop",
+    "object oriented",
+    "object-oriented",
+    "oops",
+    "object oriented programming"
+  ],
+  "TensorFlow": [
+    "tensorflow"
+  ],
+  "PyTorch": [
+    "pytorch"
+  ],
+  "Keras": [
+    "keras"
+  ],
+  "scikit-learn": [
+    "scikit-learn",
+    "sklearn",
+    "scikit"
+  ],
+  "Pandas": [
+    "pandas"
+  ],
+  "NumPy": [
+    "numpy"
+  ],
+  "Matplotlib": [
+    "matplotlib"
+  ],
+  "OpenCV": [
+    "opencv"
+  ],
+  "Jupyter": [
+    "jupyter"
+  ],
+  "Power BI": [
+    "power bi",
+    "powerbi"
+  ],
+  "Tableau": [
+    "tableau"
+  ],
+  "Excel": [
+    "excel"
+  ],
+  "Hadoop": [
+    "hadoop"
+  ],
+  "Spark": [
+    "spark",
+    "pyspark"
+  ],
+  "Kafka": [
+    "kafka"
+  ],
+  "Airflow": [
+    "airflow"
+  ],
+  "Selenium": [
+    "selenium"
+  ],
+  "pytest": [
+    "pytest"
+  ],
+  "JUnit": [
+    "junit"
+  ],
+  "Unit Testing": [
+    "unit testing",
+    "unit tests",
+    "unittest"
+  ],
+  "Postman": [
+    "postman"
+  ],
+  "Jira": [
+    "jira"
+  ],
+  "Agile": [
+    "agile"
+  ],
+  "Scrum": [
+    "scrum"
+  ],
+  "Android": [
+    "android"
+  ],
+  "Flutter": [
+    "flutter"
+  ],
+  "React Native": [
+    "react native"
+  ],
+  "Figma": [
+    "figma"
+  ],
+  "Networking": [
+    "computer networks",
+    "networking"
+  ],
+  "DBMS": [
+    "dbms",
+    "database management"
+  ],
+  "Operating Systems": [
+    "operating systems"
+  ],
+  "Cybersecurity": [
+    "cybersecurity",
+    "cyber security"
+  ],
+  "Microservices": [
+    "microservices"
+  ],
+  "System Design": [
+    "system design"
+  ],
+  "Blockchain": [
+    "blockchain"
+  ],
+  "Arduino": [
+    "arduino"
+  ],
+  "Raspberry Pi": [
+    "raspberry pi"
+  ],
+  "Embedded C": [
+    "embedded c"
+  ],
+  "Communication": [
+    "communication skills",
+    "communication"
+  ],
+  "Problem Solving": [
+    "problem solving",
+    "problem-solving",
+    "problem solver"
+  ],
+  "Teamwork": [
+    "teamwork"
+  ],
+  "Generative AI": [
+    "generative ai",
+    "genai",
+    "gen ai"
+  ],
+  "LLM": [
+    "llm",
+    "llms",
+    "large language model",
+    "large language models"
+  ],
+  "Responsive Design": [
+    "responsive design",
+    "responsive web"
+  ]
+}

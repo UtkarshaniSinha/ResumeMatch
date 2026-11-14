@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}{{ analysis.title }} - ResumeMatch{% endblock %}
+{% block content %}
+<h1>{{ analysis.title }}</h1>
+<p class="muted">Saved on {{ analysis.created_at.strftime('%d %b %Y') }} &middot; Job: "{{ analysis.job_snippet }}{% if analysis.job_snippet|length >= 150 %}...{% endif %}"</p>
+{% with r = analysis %}{% include "_result_details.html" %}{% endwith %}
+<p><a href="{{ url_for('history.list_analyses') }}">&larr; Back to my analyses</a></p>
+{% endblock %}

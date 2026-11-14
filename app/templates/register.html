@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "_macros.html" import field_errors %}
+{% block title %}Sign up - ResumeMatch{% endblock %}
+{% block content %}
+<section class="card narrow">
+  <h1>Create an account</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <label for="username">Username</label>
+    {{ form.username(autocomplete="username") }}
+    {{ field_errors(form.username) }}
+    <label for="password">Password (at least 8 characters)</label>
+    {{ form.password(autocomplete="new-password") }}
+    {{ field_errors(form.password) }}
+    <label for="confirm">Confirm password</label>
+    {{ form.confirm(autocomplete="new-password") }}
+    {{ field_errors(form.confirm) }}
+    <button type="submit" class="button">Sign up</button>
+  </form>
+  <p class="muted">Already have an account? <a href="{{ url_for('auth.login') }}">Log in</a></p>
+</section>
+{% endblock %}

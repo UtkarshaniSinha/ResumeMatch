@@ -1,0 +1,41 @@
+{# used in results.html and analysis_detail.html #}
+<section class="card">
+  <div class="score-row">
+    <div class="score-big">{{ r.score }}%</div>
+    <div class="score-info">
+      <progress max="100" value="{{ r.score }}">{{ r.score }}%</progress>
+      <p class="muted">
+        {% if r.skill_score is not none %}
+          Skill coverage: {{ r.skill_score }}% &middot;
+        {% else %}
+          No known skills found in the job description &middot;
+        {% endif %}
+        Text similarity: {{ r.text_score }}%
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="two-columns">
+  <div class="card">
+    <h2>Matched skills ({{ r.matched_skills|length }})</h2>
+    {% for skill in r.matched_skills %}<span class="tag good">{{ skill }}</span>{% else %}<p class="muted">None found.</p>{% endfor %}
+  </div>
+  <div class="card">
+    <h2>Missing skills ({{ r.missing_skills|length }})</h2>
+    {% for skill in r.missing_skills %}<span class="tag bad">{{ skill }}</span>{% else %}<p class="muted">Nothing missing. Nice!</p>{% endfor %}
+  </div>
+</section>
+
+<section class="card">
+  <h2>Resume checks</h2>
+  <table>
+    {% for check in r.checks %}
+    <tr>
+      <td class="{{ 'pass' if check.passed else 'fail' }}">{{ '✓' if check.passed else '✗' }}</td>
+      <td>{{ check.name }}</td>
+      <td class="muted">{% if not check.passed %}{{ check_tips[check.name] }}{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>

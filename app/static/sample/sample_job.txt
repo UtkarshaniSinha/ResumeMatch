@@ -1,0 +1,19 @@
+Job Title: Python Developer Intern (6 months)
+Location: Pune (Hybrid)
+
+About the role:
+We are looking for a Python Developer Intern to join our backend team. You will work on our internal web applications and help build new REST APIs.
+
+Responsibilities:
+- Build and maintain web applications using Python and Flask or Django
+- Write REST APIs and connect them with PostgreSQL databases
+- Write clean code with unit tests
+- Use Git for version control and take part in code reviews
+- Help deploy applications on AWS using Docker
+
+Requirements:
+- Pursuing B.E./B.Tech in Computer Engineering or IT
+- Good knowledge of Python, SQL and OOP concepts
+- Basic understanding of HTML, CSS and JavaScript
+- Familiarity with Linux
+- Good communication skills and problem solving ability

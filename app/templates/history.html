@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}My analyses - ResumeMatch{% endblock %}
+{% block content %}
+<h1>My saved analyses</h1>
+{% if analyses %}
+<section class="card">
+  <table>
+    <tr><th>Title</th><th>Score</th><th>Saved on</th><th></th></tr>
+    {% for a in analyses %}
+    <tr>
+      <td><a href="{{ url_for('history.view', analysis_id=a.id) }}">{{ a.title }}</a></td>
+      <td>{{ a.score }}%</td>
+      <td>{{ a.created_at.strftime('%d %b %Y') }}</td>
+      <td>
+        <form method="post" action="{{ url_for('history.delete', analysis_id=a.id) }}" class="inline">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button type="submit" class="link-button danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{% else %}
+<p class="muted">You haven't saved any analyses yet. <a href="{{ url_for('main.index') }}">Analyse a resume</a>.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Results - ResumeMatch{% endblock %}
+{% block content %}
+<h1>Your results</h1>
+{% with r = result %}{% include "_result_details.html" %}{% endwith %}
+
+<section class="card">
+  {% if current_user %}
+    <form method="post" action="{{ url_for('history.save') }}" class="save-form">
+      {{ save_form.hidden_tag() }}
+      {{ save_form.title(placeholder="e.g. Infosys - Python Intern") }}
+      <button type="submit" class="button">Save analysis</button>
+    </form>
+  {% else %}
+    <p><a href="{{ url_for('auth.login') }}">Log in</a> or <a href="{{ url_for('auth.register') }}">sign up</a> to save your analyses.</p>
+  {% endif %}
+  <p><a href="{{ url_for('main.index') }}">&larr; Analyse another resume</a></p>
+</section>
+{% endblock %}
